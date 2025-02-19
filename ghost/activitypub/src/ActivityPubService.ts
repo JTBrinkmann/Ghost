@@ -75,7 +75,7 @@ export class ActivityPubService {
                 }
             });
 
-            const body = await res.json();
+            const body = await res.json() as {webhook_secret: string};
 
             return body.webhook_secret;
         } catch (err: unknown) {
